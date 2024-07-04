@@ -43,4 +43,9 @@ export class GtinsListComponent {
     {"gtin": "812345678901", "checked": false},
     {"gtin": "912345678901", "checked": false},
   ];
+
+  goToLink(){
+    window.open('http://localhost:4200/home/398532e893402841', "_blank");
+  }
+
 }
