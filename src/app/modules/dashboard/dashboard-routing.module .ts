@@ -5,7 +5,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { GlnDetailsComponent } from './components/capture-forms/gln-details/gln-details.component';
 import { ProsyncHomeComponent } from './components/prosync-demo/prosync-home/prosync-home.component';
 
 
