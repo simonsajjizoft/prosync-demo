@@ -12,7 +12,7 @@
             <div *ngFor="let gtin of gtins" class="gtin-item"> 
                 <div class="c-box d-flex align-center">
                     <label>
-                        <input type="checkbox" class="c-box"
+                        <input type="checkbox" class="c-box" (change)="eventCheck($event,gtin)"
                             [checked]="gtin.checked">
                         <span class="checkbox-custom c-pointer"></span>
                     </label>

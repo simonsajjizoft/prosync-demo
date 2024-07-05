@@ -44,7 +44,23 @@ export class GtinsListComponent {
     {"gtin": "912345678901", "checked": false},
   ];
 
+  eventCheck(check:any,gtin:any){
+    gtin.checked = check?.target?.checked;
+  }
+
   goToLink(){
+    let payload = {
+      "appName": "ProSync",
+      "gln": "234662235",
+      "gtin": this.gtins.filter(res=>res.checked).map(ele=>String(ele?.gtin)),
+      "token": "Sample form",
+      "userName": "Sample form",
+      "userId": 104,
+      "formId":1
+    
+    }
+    console.log(payload);
+    // After getting the response as Redirect URL we need to open
     window.open('http://localhost:4200/home/398532e893402841', "_blank");
   }
 
