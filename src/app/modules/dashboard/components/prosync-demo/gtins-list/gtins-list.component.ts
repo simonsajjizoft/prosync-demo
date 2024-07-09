@@ -61,7 +61,7 @@ export class GtinsListComponent {
     }
     console.log(payload);
     // After getting the response as Redirect URL we need to open
-    window.open('http://localhost:4200/home/398532e893402841', "_blank");
+    window.open('https://app-scf-web-docker-dev.azurewebsites.net/home/transaction?id=398532e893402841', "_blank");
   }
 
 }
