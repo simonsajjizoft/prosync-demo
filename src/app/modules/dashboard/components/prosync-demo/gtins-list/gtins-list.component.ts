@@ -56,8 +56,9 @@ export class GtinsListComponent {
   goToLink(){
     let payload = {
       "appName": "ProSync",
-      // "gln": "234662235",
-      "gln":"3513535151",
+      "gln": "234662235",
+      // "gln":"3513535151",
+      // "gln":"68768767",
       "gtin": this.gtins.filter(res=>res.checked).map(ele=>String(ele?.gtin)),
       "token": "Sample form",
       "userName": "Sample name",
