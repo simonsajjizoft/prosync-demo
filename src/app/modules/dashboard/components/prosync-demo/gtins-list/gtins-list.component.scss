@@ -89,3 +89,16 @@ input[type="checkbox"].c-box:checked+.checkbox-custom::after {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
+
+
+.loader-parent {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    z-index: 3000!important;
+}
+
+.loader-parent img {
+    width: 100px;
+    margin-left: 45px;
+}

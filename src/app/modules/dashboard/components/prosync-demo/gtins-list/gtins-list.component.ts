@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../../../../services/api.service';
+import { environment } from '../../../../../../environments/environment';
 
 @Component({
   selector: 'app-gtins-list',
@@ -43,6 +45,9 @@ export class GtinsListComponent {
     {"gtin": "812345678901", "checked": false},
     {"gtin": "912345678901", "checked": false},
   ];
+  showLoader:boolean = false;
+
+  constructor(private apiService:ApiService){}
 
   eventCheck(check:any,gtin:any){
     gtin.checked = check?.target?.checked;
@@ -54,14 +59,26 @@ export class GtinsListComponent {
       "gln": "234662235",
       "gtin": this.gtins.filter(res=>res.checked).map(ele=>String(ele?.gtin)),
       "token": "Sample form",
-      "userName": "Sample form",
+      "userName": "Sample name",
       "userId": 104,
-      "formId":1
-    
+      "formId":12345
     }
     console.log(payload);
+    this.showLoader = true;
+    let url = environment?.apiUrl + 'newTransaction'
+    this.apiService.post(url,payload).subscribe((data:any)=>{
+      console.log(data);
+      this.showLoader = false;
+      let url = data?.URL;
+      // window.open('https://app-scf-web-docker-dev.azurewebsites.net/home/transaction?id=398532e893402841', "_blank");
+      window.open(url,"_blank")
+    },
+  (err:any)=>{
+    console.log(err);
+    this.showLoader = false;
+  })
     // After getting the response as Redirect URL we need to open
-    window.open('https://app-scf-web-docker-dev.azurewebsites.net/home/transaction?id=398532e893402841', "_blank");
+ 
   }
 
 }

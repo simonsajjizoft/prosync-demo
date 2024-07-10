@@ -58,7 +58,7 @@ export class ApiService {
   }
 
   post(url: string, data: any, languageType?: string): Observable<any> {
-    return this.http.post(url, data, { headers: this.setHeaders(languageType) });
+    return this.http.post(url, data);
   }
 
   postWithoutToken(url: string, data: any): Observable<any> {
@@ -66,15 +66,15 @@ export class ApiService {
   }
 
   put(url: string, data: any): Observable<any> {
-    return this.http.put(url, data, { headers: this.setHeaders() });
+    return this.http.put(url, data);
   }
 
   patch(url:string,data:any):Observable<any>{
-    return this.http.patch<any>(url, data, { headers: this.setHeaders() })
+    return this.http.patch<any>(url, data)
   }
 
   get(url: string, languageType?: string): Observable<any> {
-    return this.http.get(url, { headers: this.setHeaders(languageType) });
+    return this.http.get(url);
   }
 
   getMetaData(url:string):Observable<any> {

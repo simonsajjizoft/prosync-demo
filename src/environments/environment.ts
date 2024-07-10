@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: '',
+  apiUrl: 'https://func-scf-presenter-dev.azurewebsites.net/api/',
   authApiUrl: '',
   flowManageUrl: '',
   coreApiUrl:''
